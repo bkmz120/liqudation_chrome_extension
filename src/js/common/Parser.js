@@ -38,6 +38,12 @@ export default class Parser {
         });
         let result = [];
 
+        if ($("#loginForm",$html).length!==0) {
+            let url = "https://www.liquidation.com/login?page=%252Fauction%252Fquote%253Fid%253D" + this._productId;
+            result.push("Authorization was lost. Please sign in <a href='" + url + "' target='_blank'>here</a>");
+            return result;
+        }
+
         let $alert = $(".alert.alert-danger ul li:eq(0)",$html);
         if ($alert.length>0 && $alert.text()==="International shipping cannot be auto-quoted"){
             result.push("International shipping can't be auto-quoted. Check Rates <a href='http://www.liquidation.com/auction/quote' target='blank'>here</a>.");

@@ -64,8 +64,7 @@
 /******/ })
 /************************************************************************/
 /******/ ([
-/* 0 */,
-/* 1 */
+/* 0 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
@@ -10436,23 +10435,7 @@ return jQuery;
 
 
 /***/ }),
-/* 2 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var _PageInjecter = __webpack_require__(4);
-
-var _PageInjecter2 = _interopRequireDefault(_PageInjecter);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var injecter = new _PageInjecter2.default(document);
-injecter.inject();
-
-/***/ }),
-/* 3 */
+/* 1 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10499,7 +10482,23 @@ var SettingsStorage = function () {
 exports.default = SettingsStorage;
 
 /***/ }),
-/* 4 */
+/* 2 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _PageInjecter = __webpack_require__(3);
+
+var _PageInjecter2 = _interopRequireDefault(_PageInjecter);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var injecter = new _PageInjecter2.default(document);
+injecter.inject();
+
+/***/ }),
+/* 3 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10511,11 +10510,11 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _jquery = __webpack_require__(1);
+var _jquery = __webpack_require__(0);
 
 var _jquery2 = _interopRequireDefault(_jquery);
 
-var _Parser = __webpack_require__(7);
+var _Parser = __webpack_require__(4);
 
 var _Parser2 = _interopRequireDefault(_Parser);
 
@@ -10670,9 +10669,7 @@ var PageInjecter = function () {
 exports.default = PageInjecter;
 
 /***/ }),
-/* 5 */,
-/* 6 */,
-/* 7 */
+/* 4 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10684,11 +10681,11 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _jquery = __webpack_require__(1);
+var _jquery = __webpack_require__(0);
 
 var _jquery2 = _interopRequireDefault(_jquery);
 
-var _SettingsStorage = __webpack_require__(3);
+var _SettingsStorage = __webpack_require__(1);
 
 var _SettingsStorage2 = _interopRequireDefault(_SettingsStorage);
 
@@ -10739,6 +10736,12 @@ var Parser = function () {
                 html: responseText
             });
             var result = [];
+
+            if ((0, _jquery2.default)("#loginForm", $html).length !== 0) {
+                var url = "https://www.liquidation.com/login?page=%252Fauction%252Fquote%253Fid%253D" + this._productId;
+                result.push("Authorization was lost. Please sign in <a href='" + url + "' target='_blank'>here</a>");
+                return result;
+            }
 
             var $alert = (0, _jquery2.default)(".alert.alert-danger ul li:eq(0)", $html);
             if ($alert.length > 0 && $alert.text() === "International shipping cannot be auto-quoted") {
