@@ -1,0 +1,29 @@
+.popup {
+    width: 400px;
+    padding: 20px 15px;
+    background-color: #fdfdfd;
+    font-family: sans-serif;
+}
+
+.popup__title {
+    font-size: 17px;
+    margin-bottom: 15px;
+}
+
+.popup__dropdown {
+    display: inline-block;
+    vertical-align: top;
+    width: 200px;
+    height: 35px;
+    border: 1px solid #eee;
+    padding: 0 10px;
+}
+
+.popup__inp {
+    display: inline-block;
+    vertical-align: top;
+    width: 173px;
+    line-height: 33px;
+    border: 1px solid #eee;
+    padding: 0 10px;
+}

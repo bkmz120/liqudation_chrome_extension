@@ -1,0 +1,25 @@
+{
+  "name": "liquidation_chrome_extension",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {},
+  "babel": {
+    "presets": [
+      "env",
+      "stage-2"
+    ]
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-stage-2": "^6.24.1",
+    "webpack": "^3.11.0"
+  },
+  "dependencies": {
+    "jquery": "^3.3.1"
+  }
+}

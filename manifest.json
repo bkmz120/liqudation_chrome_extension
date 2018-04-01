@@ -1,0 +1,48 @@
+{
+    "manifest_version": 2,
+
+    "name": "liquidation.com helper",
+    "description": "Get shipping price and manifest easy",
+    "version": "1.0",
+
+    "icons": {
+        "64": "dist/img/icon.png"
+    },
+
+    "browser_action": {
+        "default_icon": "dist/img/icon.png",
+        "default_popup": "dist/html/popup.html"
+    },
+
+    "content_scripts": [{
+        "matches": ["*://www.liquidation.com/*"],
+        "js":[
+                "/dist/js/content.js"
+             ],
+        "css":[
+            "/dist/css/content.css",
+            "/dist/css/fontawesome-all.min.css"
+        ],
+        "run_at": "document_end"
+    }],
+
+    "background": {
+        "scripts": [
+            "/dist/js/background.js"
+        ]
+    },
+
+    "permissions": [
+        "activeTab",
+        "storage",
+        "unlimitedStorage",
+        "http://*/*",
+        "https://*/*"
+    ],
+
+    "web_accessible_resources": [
+        "*.ttf",
+        "*.woff2",
+        "*.eot"
+    ]
+}

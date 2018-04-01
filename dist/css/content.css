@@ -1,0 +1,74 @@
+.ce-resultItem {
+    margin-top: 5px;
+    margin-bottom: 10px;
+    position: relative;
+    padding-left: 20px;
+}
+
+.ce-resultItem_first{
+    margin-top: 15px;
+}
+
+.ce-resultItem:before {
+    position: absolute;
+    top:-2px;
+    left: 0;
+    font-family: "Font Awesome 5 Free";
+    content: "\f005";
+    color: #007dba;
+    font-weight: 700;
+}
+
+.search_grid_view .ce-resultItem {
+    padding: 0 10px;
+}
+
+.search_grid_view .ce-resultItem:before {
+    position: relative;
+    top:0;
+    left: 0;
+    display: inline-block;
+    vertical-align: baseline;
+    margin-right: 4px;
+}
+
+.ce-showQuote, .ce-manifest-link {
+    color: #007dba;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.ce-showQuote:hover {
+    text-decoration: underline;
+}
+
+.ce-showQuote_loading:hover {
+    text-decoration: none;
+    cursor: default;
+}
+
+.ce-shipping-price {
+    color: #007dba;
+    font-weight: 700;
+}
+
+.ce-shipping-price a {
+    text-decoration: underline;
+}
+
+.ce-manifest-copy-success {
+    margin-left: 20px;
+    color: #007dba;
+    font-weight: 700;
+    text-transform: uppercase;
+    opacity: 0;
+    transition: opacity 0.3s linear;
+}
+
+.ce-manifest-copy-success_visible {
+    opacity: 1;
+}
+
+.search_grid_view .ce-manifest-copy-success {
+    display: block;
+}
